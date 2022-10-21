@@ -1,18 +1,9 @@
 package top.iahc.oto.converter;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.Document;
-import com.intellij.psi.*;
-import com.intellij.psi.search.GlobalSearchScope;
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import top.iahc.oto.domain.ClassInfo;
 import top.iahc.oto.domain.FieldInfo;
 import top.iahc.oto.domain.MethodInfo;
-import top.iahc.oto.util.PsiUtil;
 
 import java.text.MessageFormat;
 import java.util.List;

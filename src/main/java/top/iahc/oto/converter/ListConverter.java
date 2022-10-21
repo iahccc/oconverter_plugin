@@ -1,11 +1,5 @@
 package top.iahc.oto.converter;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiJavaCodeReferenceElement;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiTypeElement;
 import org.apache.commons.lang3.StringUtils;
 import top.iahc.oto.domain.ClassInfo;
 import top.iahc.oto.domain.MethodInfo;
