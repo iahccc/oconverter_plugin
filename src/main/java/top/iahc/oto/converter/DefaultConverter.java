@@ -25,6 +25,11 @@ public class DefaultConverter extends Converter{
 
         StringBuilder convertSb = new StringBuilder();
 
+        String checkNullCode = MessageFormat.format("{0}if ({1} == null) '{'\n" +
+                "{0}    return null;\n" +
+                "{0}}\n", codeIndentSpace, paramName);
+        convertSb.append(checkNullCode);
+
         String returnVariableDefinition = MessageFormat.format("{0}{1} {2} = new {1}();\n",
                 codeIndentSpace, returnClassName, returnVariableName);
         convertSb.append(returnVariableDefinition);

@@ -27,7 +27,10 @@ public class ListConverter extends Converter {
 
 
         String generateCodePattern =
-                "{0}List<{1}> resultList = new ArrayList<>();\n" +
+                        "{0}if ({4} == null) '{'\n" +
+                        "{0}    return null;\n" +
+                        "{0}}\n" +
+                        "{0}List<{1}> resultList = new ArrayList<>();\n" +
                         "{0}for ({2} {3} : {4}) '{'\n" +
                         "{0}    resultList.add(convertTo{1}({3}));\n" +
                         "{0}}\n" +
