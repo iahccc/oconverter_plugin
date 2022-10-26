@@ -24,7 +24,7 @@ public class PsiUtil {
             return null;
         }
         PsiJavaCodeReferenceElement psiJavaCodeReferenceElement = psiTypeElement.getInnermostComponentReferenceElement();
-        if(psiJavaCodeReferenceElement == null) {
+        if(psiJavaCodeReferenceElement == null || psiJavaCodeReferenceElement.getReferenceNameElement() == null) {
             return null;
         }
         String className = psiJavaCodeReferenceElement.getReferenceNameElement().getText();
