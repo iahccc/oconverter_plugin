@@ -3,9 +3,12 @@
     <name>OConverter</name>
     <vendor email="" url="">IAHC</vendor>
 
+    <idea-version since-build="201.0"/>
+
     <description><![CDATA[
     VO、DTO、VO、PO、DO...对象转换插件.<br>
     ]]></description>
+
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->

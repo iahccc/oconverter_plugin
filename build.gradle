@@ -17,7 +17,9 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '2022.2.3'
+    localPath = 'D:\\Program Files\\IntelliJ IDEA Community Edition 2022.2.3'
+    intellij.updateSinceUntilBuild = false
+    type = 'IC'
     plugins = ['com.intellij.java']
 }
 patchPluginXml {
