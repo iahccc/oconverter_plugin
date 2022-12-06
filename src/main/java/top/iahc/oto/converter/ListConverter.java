@@ -13,7 +13,7 @@ public class ListConverter extends Converter {
         ClassInfo returnInfo = methodInfo.getReturnInfo();
         ClassInfo paramInfo = methodInfo.getParamInfo();
         String paramName = methodInfo.getParamName();
-        String codeIndentSpace = methodInfo.getCodeIndentSpace();
+        String codeIndentSpace = "";
         List<ClassInfo> returnGenericInfoList = returnInfo.getGenericInfos();
         List<ClassInfo> paramGenericInfoList = paramInfo.getGenericInfos();
 
@@ -32,7 +32,7 @@ public class ListConverter extends Converter {
                         "{0}}\n" +
                         "{0}List<{1}> resultList = new ArrayList<>();\n" +
                         "{0}for ({2} {3} : {4}) '{'\n" +
-                        "{0}    resultList.add(convertTo{1}({3}));\n" +
+                        "{0}    resultList.add(to{1}({3}));\n" +
                         "{0}}\n" +
                         "{0}return resultList;\n";
         String generateCode = MessageFormat.format(generateCodePattern,

@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.psi.*;
+import com.intellij.psi.codeStyle.CodeStyleManager;
 import top.iahc.oto.domain.ClassInfo;
 import top.iahc.oto.domain.MethodInfo;
 import top.iahc.oto.util.PsiUtil;
@@ -34,7 +35,12 @@ public abstract class Converter {
         Document document = CommonDataKeys.EDITOR.getData(event.getDataContext()).getDocument();
         int insertStartLineNum = document.getLineNumber(psiMethod.getTextOffset());
         WriteCommandAction.runWriteCommandAction(event.getProject(), () -> {
-            document.insertString(document.getLineStartOffset(insertStartLineNum + 1), generateCode);
+            PsiCodeBlock codeBlock = PsiElementFactory.getInstance(event.getProject())
+                    .createCodeBlockFromText("{\n" + generateCode+ "}", null);
+            if(psiMethod.getBody() != null) {
+                psiMethod.getBody().replace(codeBlock);
+                CodeStyleManager.getInstance(event.getProject()).reformat(psiMethod);
+            }
         });
     }
 

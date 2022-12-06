@@ -15,7 +15,7 @@ public class DefaultConverter extends Converter{
         ClassInfo returnInfo = methodInfo.getReturnInfo();
         ClassInfo paramInfo = methodInfo.getParamInfo();
         String paramName = methodInfo.getParamName();
-        String codeIndentSpace = methodInfo.getCodeIndentSpace();
+        String codeIndentSpace = "";
         String returnClassName = returnInfo.getClassName();
         List<FieldInfo> returnClassFieldInfoList = returnInfo.getFieldInfos();
         List<FieldInfo> paramClassFieldInfoList = paramInfo.getFieldInfos();
